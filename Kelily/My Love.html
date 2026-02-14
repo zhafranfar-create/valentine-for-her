@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Will You Be My Valentine? 💖</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .buttons {
+            position: relative;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 25px;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        #yesBtn {
+            background: white;
+            color: #ff4d6d;
+        }
+
+        #noBtn {
+            background: #ff4d6d;
+            color: white;
+            position: absolute;
+        }
+
+        #message {
+            margin-top: 20px;
+            font-size: 24px;
+            display: none;
+        }
+
+        video {
+            margin-top: 20px;
+            width: 300px;
+            border-radius: 15px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Will You Be My Valentine? 💕</h1>
+
+<div class="buttons">
+    <button id="yesBtn" onclick="sayYes()">Yes 💖</button>
+    <button id="noBtn" onmouseover="moveButton()">No 😢</button>
+</div>
+
+<div id="message">
+    YAYYYYY 😍💘<br><br>
+    I love you so much ❤️
+</div>
+
+<video id="loveVideo" controls>
+    <source src="love.mp4" type="video/mp4">
+</video>
+
+<script>
+function sayYes() {
+    document.getElementById("message").style.display = "block";
+    document.getElementById("loveVideo").style.display = "block";
+    document.getElementById("loveVideo").play();
+}
+
+function moveButton() {
+    const button = document.getElementById("noBtn");
+    const x = Math.random() * (window.innerWidth - 100);
+    const y = Math.random() * (window.innerHeight - 50);
+
+    button.style.left = x + "px";
+    button.style.top = y + "px";
+}
+</script>
+
+</body>
+</html>
